@@ -1,0 +1,152 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{setspace}
+
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+
+% 1. Fill in these details
+\def \CapstoneTeamName{		OMSI Dream Team}
+\def \CapstoneTeamNumber{		67}
+\def \GroupMemberOne{			Travis Gray}
+\def \GroupMemberTwo{			Thu Hoang}
+\def \GroupMemberThree{			Tasnia Kabir}
+\def \GroupMemberFour{			Sergio Ortega-Rojas}
+\def \CapstoneProjectName{		Tech Curriculum Development for Teens}
+\def \CapstoneSponsorCompany{	OMSI}
+\def \CapstoneSponsorPerson{		Rebecca Reilly}
+
+% 2. Uncomment the appropriate line below so that the document type works
+\def \DocType{		%Problem Statement
+				%Requirements Document
+				Technology Review
+				%Design Document
+				%Progress Report
+				}
+			
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil 	\makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill		\makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil		\makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill	\makebox[.75in][r]{Date}}}}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+\renewcommand{\NameSigPair}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+    	\includegraphics[height=4cm]{OSU_horizontal_2C_O_over_B}
+        \hfill 
+        % 4. If you have a logo, use this includegraphics command to put it on the coversheet.
+        %\includegraphics[height=4cm]{CompanyLogo}   
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            \huge CS Capstone \DocType \par
+            {\large\today}\par
+            \vspace{.5in}
+            \textbf{\Huge\CapstoneProjectName}\par
+            \vfill
+            {\large Prepared for}\par
+            \Huge \CapstoneSponsorCompany\par
+            \vspace{5pt}
+            {\Large\NameSigPair{\CapstoneSponsorPerson}\par}
+            {\large Prepared by }\par
+            Group\CapstoneTeamNumber\par
+            % 5. comment out the line below this one if you do not wish to name your team
+            \CapstoneTeamName\par 
+            \vspace{5pt}
+            {\Large
+                \NameSigPair{\GroupMemberOne}\par
+                \NameSigPair{\GroupMemberTwo}\par
+                \NameSigPair{\GroupMemberThree}\par
+                \NameSigPair{\GroupMemberFour}\par
+            }
+            \vspace{20pt}
+        }
+        \begin{abstract}
+        % 6. Fill in your abstract    
+        	This document provides an in-depth look at encryption techniques and game artificial intelligence implementations as a part of a technology review. To compare and contrast different methods with the intention of picking one to implement in the design of Encryption module for the Tech Curriculum.
+        \end{abstract}     
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+% 7. uncomment this (if applicable). Consider adding a page break.
+%\listoffigures
+%\listoftables
+\clearpage
+
+% 8. now you write!
+\section{Introduction}
+%Your role in the project
+%What your team is trying to accomplish (at a very high level) -- HINT: use text from your problem statement
+The focus of this technology review is to research and review different types of technologies that can be implemented into the Tech Curriculum project. The OMSI Dream Team's objective is to provide a 20 hour curriculum centered around Hacking and Cybersecurity by creating sandboxes of technologies that the teens can interact with. Our goal is to create 3 of these sandboxes that guide the teens through learning objectives and provide them skills that can be used to protect themselves online.
+
+My name is Sergio Ortega-Rojas, and I am the primary writer of this document. My role on the OMSI Dream Team is to proofread documents and ensure that the final document is up to the team's standard. When development begins on the sandboxes, I will be tasked with the Encryption module and subsequent mastermind game AI. As such, the main focus of the technology review will be on Encryption Methods and Game Artificial Intelligence Implementations. Both are important to the focus of the Encryption module, as the tech has to be understandable to the user group and usable for their projects.
+
+\section{Encryption Methods}
+There are many different types of encryption techniques that have been developed over Humankind's time on earth. Encryption has been used over the years as a method to securely transfer sensitive information between two parties. For the Encryption module, a section of the module will involve the teens decrypting a secret message. As such, the encryption method that will be used is important to the project as the teens will implement their own versions of the encryption methods.
+\subsection{Substitution Cipher}
+Substitution Ciphers have been known to exist since ancient times, with the earliest known cipher being the Atbash Cipher. The Atbash Cipher is a simple substitution cipher that involves replacing plaintext with a known ciphertext. This is one of the least secure methods of encrypting a message as there is no key that differentiates one message from another. An example of this cipher in action, by taking the message "Hello World" encrypting it with the following cipher alphabet ZYXWVUTSRQPONMLKJIHGFEDCBA would then result in the cyphertext "SVOOL DLIOW".
+
+While this cipher is easy to teach and have the teens learn, the fact that it is extremely simplistic is a detriment to what is expected in the curriculum. This is not an ideal choice for the Encryption module, to be focused on. 
+\subsection{RSA Algorithm}
+RSA was developed by Ron Rivest, Adi Shamir, and Leonard Adleman in 1977. The original goal, that created the RSA Algorithm, was to create a method where there would be one way encryption that would be difficult to reverse. Multiple attempts were made by Rivest, Shamir, and Adleman to create this method, it took them well over a year to finally create it. The idea behind RSA is to have a pair of keys, one public another private. The public key would be available for anyone to encrypt a message that is then sent to the private key holder. Once the ciphertext is received, the private key holder then uses their private key to decrypt the message into plaintext. 
+
+%Provide a paragraph with an example of RSA in use
+RSA is one of the more secure algorithms that are available, and while it can be initially difficult to understand. With the proper mathematical skills this can be used without issue. However, with the user group that we are creating this curriculum for, we cannot assume that they have the mathematical knowledge to properly decipher or understand this algorithm. On the other hand, it would be easier to find example of this encryption being used in everyday life.
+\subsection{One Time Pad}
+The One Time Pad is described to be the "Perfect" encryption technique, as each key is unique to the message that is being encrypted in theory. Each key is used once per encryption, the key is then handed to the other party through a secure means and subsequently used for the decryption of the message. The fact that there is no way to regenerate the key is what makes this encryption technique, when done correctly, "unbreakable" and most cryptologists would agree that it would take an extraordinary effort to be close to break the encryption.
+
+The One Time Pad was popularized during World War 2, by spies to carry messages between allies. Even now short messages are encoded utilizing this encryption technique, but the main downfall of the method is the cost to generate a unique set of letters that can be used to encrypt the message. As the sting of letters grows, so does the chance that a pattern emerges from the randomization algorithm used to create it. This is part of the reason why rand() functions that are available in most languages are not considered secure for encryption. 
+
+This is one of the best methods of encryption that can be taught as it is still a secure method of encrypting messages. For a classroom setting, the setup cost is minimal and is not overly complicated to understand the concept behind the encryption. If implemented, the team would create the sandbox that would hold the one time pad encryption algorithm and then subsequently have them attempt to create their own.
+
+\section{Game Artificial Intelligence Implementations}
+A part of the Encryption module will involve the teens attempt to break a code generated by an AI. Our role will be to provide this ciphertext, by creating an AI based off the board game Mastermind. In Mastermind, two players face off against one another to break a user made code. The one creating the code uses 4 colored pegs from a group of 6 different colors. The codebreaker then attempts to crack it by brute force with feedback made from either a black and white peg, which signify correct placement/color or simply correct color. The game continues until either the code is broken, or the codebreaker runs out of attempts. The game that we create while similar won't explicitly follow the same rules.
+
+As such, we are attempting to create a game AI that will generate the code and then have the teens attempt to crack the code. We want to provide the teens with the idea that they are facing a human player on the other side that will attempt to deceive them. So we are searching for an implementation method that we base the game AI around. 
+\subsection{Rules-Based Systems}
+Rules-Based Systems is one of the potentially simplest AIs to implement, as the core concept behind the system is creating rules that the AI follows. Take for example blackjack, a game with the goal of either hitting 21 or being the closest to it without going over. A simple Rules-Based System would take their score into account then determine if it was under, over, or at the expected target. It would then use this information to make its next move. While it looks simplistic in practice, and it is for the most part. A good example of additional complexity is Pacman, each individual ghost is governed by a their own unique set of rules and if they were sent off individually the player would easily evade each one. However, in tandem with one another they add a layer of additional difficulty.
+
+This would be a good option for the game, as it gives us the most control over the AIs actions and decisions. The main issue that I can foresee occurring, is that the system would be either too simple or too difficult for the teens to crack. If it is too simple it ruins the level of immersion that we are striving for in the Encryption module. However, if it is too difficult then it can demotivate the teens from attempting to further pursue other items in the Encryption module. While we can craft multiple difficulties for the teens to attempt, there is no way for us to adapt it to their level exactly.
+\subsection{Adaptive AI}
+Adaptive AI is the closest to an actual AI, as it grows over time and learns from the opponent to make its next move. The initial part of the AI behavior is set either by design or some element of randomness. Afterwards the idea is for the AI to make predictions on the opponent's move then attempt to make their own, if successful weight the move higher. Then based on the collection of weights it continually makes further moves, this allows it to become unrestricted in a sense and allowed to create it's own unique patterns. This is the type of AI that is prevalent in fighting and strategy games. The reason for this is setting predetermined routes would allow the player to find the optimal route to defeat the AI, which would make the game session less exciting and repetitive.
+
+This is more than likely the optimal choice for our game in the Encryption module. As the level would either increase or decrease based on the player's wins/loss rate, and their code choices. It would be similar to a matchmaking rating that can also be used to create a leaderboard so the teens can compete with one another. The biggest challenge would be ensuring that the AI scales correctly without increasing or decreasing too drastically but this would be an implementation concern.
+
+\subsection{Finite State Machine}
+The Finite State Machine utilizes multiple states of awareness to determine it's next action. AIs that use this type of implementation, have certain state triggers that interact to make the next move. This allows it to take actions based on what it perceives the player doing. For example, a player takes multiple units with a single unit which triggers an alert that the single unit used by the player is a threat. It would then use the information on the unit and its alerted state to determine a counter strategy to the unit. While not typically used in strategy games, it can be done to create unique AI behaviors that can surprise the player. This type of AI is mainly seen in games that use multiple AIs in a room to communicate with one another. A good example would be the Metal Gear series, as each AI patrolling has an idle state but when encountering the player can move into multiple states that will call other AIs to it or search for the source of disturbance.
+
+An interesting take on AIs, but not the ideal method of implementation for the strategy game that we are trying to create for the Encryption module. In fact, this would be over complicated and would result in a poor experience. The states would be fairly simple and would be difficult to scale correctly to the players action. 
+
+\section{Conclusion}
+The technology that we will be using in the project for the Encryption module after reviewing multiple types are the One Time Pad and Adaptive AI. The One Time Pad, allows us to easily create an encryption machine that can be deconstructed and shows the teens how to successfully create their own without much experience. With the game AI, an adaptive AI system allows us to scale the level of difficulty for each player and compete with one another for top ranking. Our goal in this project is simple, that is to create a curriculum that maintains the teen's attention and provides entertainment while learning about the world of Computer Science.
+
+\clearpage
+\section{Bibliography}
+[1]
+Gianni Sarcone, "Mastermind History" Archimedes' Lab, 2018. [Online]. Available: \newline
+www.archimedes-lab.org/mastermind.html. [Accessed: 05-Nov-2018]\newline
+
+\noindent
+[2]
+Finjan Team, “Substitution Ciphers – A Look at the Origins and Applications of Cryptography” Finjan Holdings, 27-Sep-2016. [Online]. Available:  \newline https://blog.finjan.com/substitution-ciphers-a-look-at-the-origins-and-applications-of-cryptography/. [Accessed: 05-Nov-2018]. \newline
+
+\noindent
+[3]
+Stephanie Blanda, “RSA Encryption – Keeping the Internet Secure” American Mathematical Society , 30-Mar-2014. [Online]. Available:  \newline https://blogs.ams.org/mathgradblog/2014/03/30/rsa/. [Accessed: 05-Nov-2018]. \newline
+
+\noindent
+[4]
+Neal R. Wagner, The Laws of Cryptography with Java Code, 1st ed. Reading, MA: University of Texas at San Antonio, 2003. [E-book] Available: \newline http://www.cs.utsa.edu/~wagner/lawsbookcolor/laws.pdf. \newline
+
+\noindent
+[5]
+Donald Kehoe, “Designing Artificial Intelligence for Games (Part 1)” Intel , 1-Jan-2015. [Online]. Available:  \newline https://software.intel.com/en-us/articles/designing-artificial-intelligence-for-games-part-1. [Accessed: 05-Nov-2018]. \newline
+
+\end{document}
