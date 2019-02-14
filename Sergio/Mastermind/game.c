@@ -25,7 +25,7 @@ void GameStart() {
 	enum boardpegs aiCode[4], userPeg[4];
 	enum coderesponse response[4];
 	char g;
-	int i, x, y, total[3], colorCheck, colorFlag, numOfGuesses = 3;
+	int i, x, y, total[3], colorCheck, colorFlag, numOfGuesses = 12;
 
 	moves = fopen("moveset.mm", "w");
 	//fprintf(stdout, "Test Code: ");
