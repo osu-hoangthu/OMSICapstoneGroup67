@@ -12,7 +12,7 @@ void Decrypt();
 void Keygen(int);
 
 int main() {
-	//ValidateDir();
+	ValidateDir();
 	Menu();
 	return 0;
 }
@@ -87,17 +87,10 @@ void Encrypt() {
 	printf("Encrypted message: ");
 	
 	//Encrypt Sentence and place in a message file
-	///TODO:FIX THE ENCRYPTION! I messed up somewhere
+	///TODO:Account for upper and lower case
 	for (i = 0; i < strlen(buffer)-1; i++) {
 		a = buffer[i];
 		b = fgetc(key);
-		//Account if space char is used
-		if (a == 32) {
-			a = 91;
-		}
-		if (b == 32) {
-			b = 91;
-		}
 
 		c = a + b - 65;
 
@@ -132,7 +125,7 @@ void Decrypt() {
 
 	//Attempt to load message file
 	///TODO: Recover from error and reset this interaction
-	if ((message = fopen("message.txt", "r")) == -1) {
+	if ((message = fopen("message.txt", "r")) == NULL) {
 		fprintf(stderr, "Issue opening file\n");
 		exit(2);
 	}
@@ -146,7 +139,7 @@ void Decrypt() {
 
 	//Attempt to load message file
 	///TODO: Recover from error and reset this interaction
-	if ((key = fopen(fileName, "r")) == -1) {
+	if ((key = fopen(fileName, "r")) == NULL) {
 		fprintf(stderr, "Issue opening file\n");
 		exit(2);
 	}
@@ -220,16 +213,10 @@ void Keygen(int len) {
 	key = fopen(fileName, "w");
 	
 	for (i = 0; i < len; i++) {
-		x = rand() % 27;
-		if (x < 26) {
-			c = x + 65;
-		}
-		else {
-			c = ' ';
-		}
+		x = rand() % 95;
+		c = x + 32;
 		fprintf(key, "%c", c);
 	}
-	fprintf(key, "\n");
 
 	fclose(key);
 }
