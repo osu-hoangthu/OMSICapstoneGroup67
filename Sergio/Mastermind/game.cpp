@@ -30,7 +30,7 @@ void GameStart() {
 	moves = fopen("moveset.mm", "w");
 	//fprintf(stdout, "Test Code: ");
 	for (i = 0; i < 4; i++) {
-		aiCode[i] = rand() % 6;
+		aiCode[i] = (enum boardpegs)(rand() % 6);
 		//PrintNameOfBoardPeg(aiCode[i], stdout);
 		//fprintf(stdout, " ");
 	}
@@ -47,7 +47,7 @@ void GameStart() {
 			fprintf(stdout, "Enter peg %d:", (i + 1));
 			g = getc(stdin);
 			while ((getchar()) != '\n');
-			userPeg[i] = GetBoardPeg(g);
+			userPeg[i] = (enum boardpegs)GetBoardPeg(g);
 			PrintNameOfBoardPeg(userPeg[i], moves);
 			fprintf(moves, " ");
 		}

@@ -1,5 +1,7 @@
 #include "fileops.h"
 
+FILE *errorLog;
+
 /* Function InitializeDir
 Description: Redirects OS operations to the proper game folder
 and checks to see if the folder exists. If it does exist then simply change to it,
@@ -12,11 +14,11 @@ Function File Declaration: fileops.h
 */
 void InitializeDir() {
 	//Attempt to change to created DIR 
-	if (chdir("OTP") == -1) {
+	if (_chdir("OTP") == -1) {
 		//If the directory does not exist then create DIR
-		mkdir("OTP", 0755);
+		_mkdir("OTP");
 		//Move file operations to the proper DIR
-		chdir("OTP");
+		_chdir("OTP");
 	}
 
 	fopen_s(&errorLog, "Error.log", "w");

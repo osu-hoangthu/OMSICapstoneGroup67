@@ -10,13 +10,11 @@ Returns: Nothing
 Function File Declaration: initialize.h
 */
 void InitializeDir() {
-	if (chdir("MM") == -1) {
-		//Create DIR name
-		char directoryName[3] = "MM";
+	if (_chdir("MM") == -1) {
 		//Make the actual DIR with proper permissions
-		mkdir(directoryName, 0755);
+		_mkdir("MM");
 		//Change into the Proper DIR
-		chdir(directoryName);
+		_chdir("MM");
 	}
 }
 
