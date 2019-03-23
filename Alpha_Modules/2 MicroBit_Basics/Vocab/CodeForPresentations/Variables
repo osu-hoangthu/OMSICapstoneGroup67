@@ -1,3 +1,0 @@
-let foo = 5
-foo = 9
-basic.showNumber(foo)
