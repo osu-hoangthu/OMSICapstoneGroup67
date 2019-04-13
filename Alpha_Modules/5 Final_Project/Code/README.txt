@@ -1,11 +1,7 @@
-1. Paste code here:	https://makecode.microbit.org/ (Note, you must delete the existing code for a fresh project)
+1. Download the .hex file to Micro:Bit
 
-2. Download the .hex file
+2. Have the teens see what is going on and figure out how to break the code.
 
-3. Upload to MicroBit 
+3. Once the lock is broken, give the teens the source code. 
 
-4. Have the teens see what is going on and figure out how to break the code.
-
-5. Once the lock is broken, give the teens the source code. 
-
-6. Have the teens modify the code to their liking so they can bring home their own lock.
+4. Have the teens modify the code to their liking so they can bring home their own lock.
