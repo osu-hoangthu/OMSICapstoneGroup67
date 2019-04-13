@@ -1,0 +1,148 @@
+let PinPressed = 0
+let GuessSession = 0
+let Pin2 = 0
+let Pin1 = 0
+let Pin0 = 0
+let RandomKey = 0
+let index = 0
+function KeepBoxLocked2() {
+    basic.showLeds(`
+        . . . . .
+        . # . # .
+        . . . . .
+        . # # # .
+        # . . . #
+        `)
+    basic.pause(1000)
+    basic.showLeds(`
+        # . . . #
+        . # . # .
+        . . # . .
+        . # . # .
+        # . . . #
+        `)
+    basic.pause(1000)
+}
+function UnlockBox2() {
+    basic.showLeds(`
+        . . . . .
+        . # . # .
+        . . . . .
+        . # # # .
+        # . . . #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        . . . . .
+        . # . # .
+        . . . . .
+        # . . . #
+        . # # # .
+        `)
+    basic.pause(100)
+    while (true) {
+        basic.showIcon(IconNames.Yes)
+    }
+}
+function CheckKey2() {
+    if (RandomKey == 1) {
+        if (Pin0 == 0 && (Pin1 == 0 && Pin2 == 1)) {
+            UnlockBox2()
+        }
+    } else if (RandomKey == 2) {
+        if (Pin0 == 0 && (Pin1 == 1 && Pin2 == 0)) {
+            UnlockBox2()
+        }
+    } else if (RandomKey == 3) {
+        if (Pin0 == 0 && (Pin1 == 1 && Pin2 == 1)) {
+            UnlockBox2()
+        }
+    } else if (RandomKey == 4) {
+        if (Pin0 == 1 && (Pin1 == 0 && Pin2 == 0)) {
+            UnlockBox2()
+        }
+    } else if (RandomKey == 5) {
+        if (Pin0 == 1 && (Pin1 == 0 && Pin2 == 1)) {
+            UnlockBox2()
+        }
+    } else if (RandomKey == 6) {
+        if (Pin0 == 1 && (Pin1 == 1 && Pin2 == 0)) {
+            UnlockBox2()
+        }
+    } else if (RandomKey == 7) {
+        if (Pin0 == 1 && (Pin1 == 1 && Pin2 == 1)) {
+            UnlockBox2()
+        }
+    } else {
+        basic.showString("Error!")
+        control.reset()
+    }
+    KeepBoxLocked2()
+}
+input.onPinPressed(TouchPin.P0, function () {
+    if (Pin0 == 0 && GuessSession == 1) {
+        for (let index2 = 0; index2 <= 2; index2++) {
+            led.plot(0, index2)
+        }
+        Pin0 = 1
+    }
+})
+function PrintBox2() {
+    led.plot(1, 1)
+    led.plot(1, 2)
+    led.plot(1, 3)
+    led.plot(2, 1)
+    led.plot(2, 3)
+    led.plot(3, 1)
+    led.plot(3, 2)
+    led.plot(3, 3)
+}
+input.onPinPressed(TouchPin.P1, function () {
+    if (Pin1 == 0 && GuessSession == 1) {
+        for (let index3 = 0; index3 <= 2; index3++) {
+            led.plot(2, index3)
+        }
+        Pin1 = 1
+    }
+})
+input.onPinPressed(TouchPin.P2, function () {
+    if (Pin2 == 0 && GuessSession == 1) {
+        for (let index4 = 0; index4 <= 2; index4++) {
+            led.plot(4, index4)
+        }
+        Pin2 = 1
+    }
+})
+function ClearScreen2() {
+    basic.clearScreen()
+}
+index = 0
+basic.forever(function () {
+    RandomKey = Math.randomRange(1, 7)
+    Pin0 = 0
+    Pin1 = 0
+    Pin2 = 0
+    PinPressed = 0
+    basic.showNumber(1)
+    basic.pause(10)
+    basic.showNumber(2)
+    basic.pause(10)
+    basic.showNumber(3)
+    basic.pause(10)
+    ClearScreen2()
+    for (let index5 = 0; index5 <= RandomKey; index5++) {
+        if (index5 != RandomKey) {
+            PrintBox2()
+            basic.pause(200)
+            ClearScreen2()
+            basic.pause(200)
+        }
+    }
+    GuessSession = 1
+    for (let index6 = 0; index6 <= 4; index6++) {
+        led.plot(index6, 4)
+        basic.pause(1000)
+    }
+    basic.clearScreen()
+    CheckKey2()
+})

@@ -19,3 +19,6 @@ You may also see the published links:
 	
 4) Pin I/O:			https://makecode.microbit.org/_Me7WF06LvDFc
 
+5) Buttons: 		https://makecode.microbit.org/_F6war8YMjEYC
+
+6) Radio:			https://makecode.microbit.org/_isUKFhLuYMzD 
