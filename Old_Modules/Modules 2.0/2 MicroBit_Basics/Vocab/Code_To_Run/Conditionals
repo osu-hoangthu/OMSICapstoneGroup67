@@ -1,0 +1,9 @@
+let foo = 5;
+
+if (foo == 5) {
+    foo = 1;
+} else {
+    foo = 9;
+}
+
+basic.showNumber(foo)
