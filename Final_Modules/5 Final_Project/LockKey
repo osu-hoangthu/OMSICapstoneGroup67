@@ -1,0 +1,9 @@
+				pin0	pin1	pin2
+
+1 flash 	=	0		0		1
+2 flashes	=	0		1		0 
+3 flashes	=	0		1		1
+4 flashes	=	1		0		0
+5 flashes	=	1		0		1
+6 flashes	=	1		1		0
+7 flashes	=	1		1		1
