@@ -2,6 +2,8 @@
 #define GAME_H
 #include <stdio.h>
 #include <stdlib.h>
+#include "programoperations.h"
+#include "player.h"
 
 
 enum boardpegs
@@ -21,7 +23,8 @@ enum coderesponse
 	CORRECTCOLOR
 };
 
-void GameStart();
+void GameStart(struct profileSettings*);
+void ChallengeGameStart(struct profileSettings*);
 void PrintNameOfBoardPeg(int, FILE*);
 int GetBoardPeg(char);
 

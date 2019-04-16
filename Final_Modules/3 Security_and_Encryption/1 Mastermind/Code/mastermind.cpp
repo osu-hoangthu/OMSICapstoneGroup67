@@ -1,9 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "programoperations.h"
 #include "player.h"
-#include "initialize.h"
-#include "game.h"
 
 //Function Comment Template
 /*Function <name>
@@ -23,27 +19,28 @@ Description: <Struct Description>
 -End Variables-
 Struct File Declaration: <Header Name>
 */
-void SetGameState();
 
 int main() {
+	//Initialize the current profile
+	struct profileSettings *currentProfile;
+	currentProfile = new struct profileSettings();
+
 	//initialize directory
 	InitializeDir();
+
 	//Load Settings
-	LoadSettings();
+	LoadSettings(currentProfile);
+	
 	//initialize game state
 	SetGameState();
-	//initialize game
-	GameStart();
-	//record data
-	//RecordData();
-	//repeat/exit
-	fprintf(stdout, "Press Enter to exit...");
-	getc(stdin);
+	
+	//initialize Menu
+	MainMenu(currentProfile);
+
+	//Save Settings
+	SaveSettings(currentProfile);
+	
+	delete currentProfile;
+
 	return 0;
-}
-
-
-void SetGameState() {
-	srand(time(NULL));
-	return;
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "fileops.h"
+#include "programops.h"
 
 //Function Comment Template
 /*Function <name>
@@ -26,6 +26,9 @@ int main() {
 	srand(time(NULL));
 	
 	InitializeDir();
+	
+	SetTitle();
+	
 	Menu();
 
 	return 0;

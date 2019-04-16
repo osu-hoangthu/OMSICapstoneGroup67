@@ -1,3 +1,0 @@
-#Windows Makefile for use with Microsoft C/C++ compiler
-
-!include <win32.mak>

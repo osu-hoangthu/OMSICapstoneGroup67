@@ -1,0 +1,1 @@
+Code is meant to be compiled with Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86, with the "nmake all" command. Both OTP and encryption have their own makefile to compile the code. "nmake clean" will clean all the obj files and executable once completed.

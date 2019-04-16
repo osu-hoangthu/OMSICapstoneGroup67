@@ -1,5 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#include "printgraphics.h"
+#include <string>
 
 enum difficulty
 {
@@ -27,7 +29,7 @@ struct playRecords
 	int numberOfRegularGames;
 	int challWin;
 	int challLoss;
-	int numberOfChallengeGames;//Might have to diversify later
+	int numberOfChallengeGames;
 };
 
 /*Struct profileSettings
@@ -43,10 +45,13 @@ Struct File Declaration: player.h
 */
 struct profileSettings
 {
-	char **playerName;
+	std::string playerName;
 	int playerNameLength;
 	enum difficulty aiStrength;
 	struct playRecords currentRecord;
+	std::string language;
 };
+
+//void PlayerRecords();
 
 #endif // !PLAYER_H
